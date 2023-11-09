@@ -1,0 +1,14 @@
+{
+  "name": "random-dummy-data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:KaiserPhemi/random-dummy-data.git",
+  "author": "KaiserPhemi <kaiser.phemi@protonmail.ch>",
+  "license": "MIT",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0"
+  }
+}
