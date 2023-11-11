@@ -13,7 +13,7 @@ const phoneNumberGenerator = require("./phoneNum");
 const randomUser = () => {
   return {
     gender: faker.person.sex(),
-    location: faker.location.state(),
+    location: faker.location.state().toLowerCase(),
     used_by: phoneNumberGenerator(),
     voucher_code: faker.string.numeric({ length: 5, allowLeadingZeros: false }),
     voucher_value: faker.number.int({ min: 50, max:1000 }),
