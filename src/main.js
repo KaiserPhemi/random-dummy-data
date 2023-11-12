@@ -4,8 +4,6 @@ const { faker } = require('@faker-js/faker/locale/en_NG');
 // modules
 const phoneNumberGenerator = require("./phoneNum");
 
-// const ageRange = "18-25" | "26-30" |"31-45"|"46+";
-
 /**
  * Generates a random client
  * @returns 

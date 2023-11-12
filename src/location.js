@@ -1,6 +1,7 @@
 // modules
 const randomSelector = require("./randomSelector");
 
+// list of major cities in Nigeria
 const cities =  [
     "Aba",
     "Abakaliki",
@@ -64,6 +65,6 @@ const cities =  [
     "Zaria"
   ]
 
-  const getLocation = () => randomSelector(cities);
+const getLocation = () => randomSelector(cities);
 
 module.exports = getLocation;

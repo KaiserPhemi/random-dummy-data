@@ -3,9 +3,6 @@
  * @param {*} arr 
  * @returns 
  */
-const getRandomItem = (arr) => {
-  const randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex];
-}
+const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 module.exports = getRandomItem;

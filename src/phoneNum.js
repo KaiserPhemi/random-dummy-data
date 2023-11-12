@@ -21,9 +21,9 @@ const phoneNetworkPrefixes = [
  * @returns - string
  */
 const phoneNumberGenerator = () => {
-  const firstPart = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
-  const secondPart = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+  const firstPart = Math.random().toString().slice(2, 5);
+  const secondPart = Math.random().toString().slice(2, 6);
   return `${COUNTRY_CODE}${randomSelector(phoneNetworkPrefixes)}${firstPart}${secondPart}`;
-}
+};
 
 module.exports = phoneNumberGenerator;
