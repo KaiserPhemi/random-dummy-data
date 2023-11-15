@@ -43,4 +43,4 @@ const init = (len) => {
   generateExcel(res)
 }
 
-init(4000)
+init(6000)

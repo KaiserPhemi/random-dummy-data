@@ -21,7 +21,7 @@ const randomUser = () => {
 
 const randomSMSUser = ()=> {
   return {
-    message: faker.lorem.text(),
+    message: faker.lorem.slug(10),
     phone_number: phoneNumberGenerator(),
     shortcode: 8011,
     delivered: faker.datatype.boolean(0.85),
