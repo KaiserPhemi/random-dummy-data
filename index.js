@@ -3,6 +3,7 @@ const XLSX = require("xlsx");
 
 // module
 const randomUser = require('./src/main');
+const {randomSMSUser} = require('./src/main')
 
 /**
  * generates array user details 
@@ -14,6 +15,14 @@ const userList = (arrLen) => {
     list.push(randomUser())
   }
   return list;
+}
+
+const smsList = (arrLen)=> {
+  const list= [];
+  for(let i=0;i<arrLen;i++){
+    list.push(randomSMSUser())
+  }
+  return list
 }
 
 /**
@@ -29,8 +38,9 @@ const generateExcel= (data)=> {
 	}
 
 const init = (len) => {
-  const res = userList(len)
+  // const res = userList(len)
+  const res = smsList(len)
   generateExcel(res)
 }
 
-init(7000)
+init(4000)

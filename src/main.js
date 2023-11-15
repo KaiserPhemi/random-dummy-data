@@ -19,4 +19,15 @@ const randomUser = () => {
   }
 }
 
-module.exports = randomUser;
+const randomSMSUser = ()=> {
+  return {
+    message: faker.lorem.text(),
+    phone_number: phoneNumberGenerator(),
+    shortcode: 8011,
+    delivered: faker.datatype.boolean(0.85),
+    created_at:faker.date.between({ from: '2023-05-01T00:00:00.000Z', to: '2023-11-05T00:00:00.000Z' }),
+
+  }
+}
+
+module.exports = {randomUser, randomSMSUser};
