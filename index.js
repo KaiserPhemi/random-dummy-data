@@ -1,5 +1,6 @@
 // third-party libraries
 const XLSX = require("xlsx");
+const crypto = require('crypto');
 
 // module
 const randomUser = require('./src/main');
@@ -31,11 +32,21 @@ const smsList = (arrLen)=> {
  * @returns 
  */
 const generateExcel= (data)=> {
-		const workbook = XLSX.utils.book_new();
-		const worksheet = XLSX.utils.json_to_sheet(data);
-		XLSX.utils.book_append_sheet(workbook, worksheet, "promo_list");
-    return XLSX.writeFile(workbook, "user_details.xlsx");
-	}
+  const randomString = crypto.randomUUID();
+
+  // Load the Excel template
+  const templatePath = "./src/docTemplates/temp_sheet.xlsx";
+  const workbook = XLSX.readFile(templatePath);
+
+  // Access the desired sheet in the workbook
+  const sheetName = 'report';
+  let sheet = workbook.Sheets[sheetName];
+  sheet = XLSX.utils.sheet_add_json(sheet, data, {origin: 'A3'});
+
+  // file name
+  const outputPath = `src/reports/service_report_${new Date().toISOString().slice(0,10)}_${randomString.slice(0,7)}.xlsx`;
+  return XLSX.writeFile(workbook, outputPath, { bookType: 'xlsx' });
+}
 
 const init = (len) => {
   // const res = userList(len)
